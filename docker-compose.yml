@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./web/static:/static
+    links:
+      - web:web
+    networks:
+      - app-network
   web:
     build:
       context: ./web
