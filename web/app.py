@@ -1,4 +1,5 @@
-import os
+# -*- coding: utf-8 -*-
+
 from flask import Flask, render_template
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
