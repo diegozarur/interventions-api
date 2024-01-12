@@ -68,6 +68,16 @@ flask db upgrade
 
 This will initialize the database and apply any initial migrations.
 
+## Flask-Restless
+
+This project uses [Flask-Restless](https://flask-restless.readthedocs.io/) for creating a RESTful API with ease. Flask-Restless simplifies the process of building RESTful APIs on top of Flask applications.
+
+For more information about Flask-Restless, you can refer to the [official documentation](https://flask-restless.readthedocs.io/).
+
+### Quick Links
+- [Flask-Restless Documentation](https://flask-restless.readthedocs.io/)
+
+
 ## Running the Application
 
 With the containers running, the Flask application should be accessible at http://localhost:8000. You can access the API
