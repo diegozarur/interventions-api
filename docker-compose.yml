@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes: [ './web:/app' ]
+    environment:
+      - FLASK_DEBUG=1
+    env_file:
+      - .env  # Use environment variables from .env file
+    depends_on:
+      - db
+    networks:
+      - app-network
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nautiluxdb
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
