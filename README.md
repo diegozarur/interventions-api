@@ -68,15 +68,60 @@ flask db upgrade
 
 This will initialize the database and apply any initial migrations.
 
+## Accessing the Interventions API
+
+### List all Interventions
+
+To retrieve a list of all interventions, you can make a `GET` request to the following endpoint:
+
+```bash
+curl -X GET http://localhost:8000/api/v1/interventions
+```
+
+### Get a Specific Intervention
+
+To retrieve details of a specific intervention, replace <intervention_id> with the actual ID and make a GET request:
+
+```bash
+curl -X GET http://localhost:8000/api/v1/interventions/<intervention_id>
+```
+
+### Create a New Interventionn
+
+To create a new intervention, make a POST request with the required data:
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"wording":"New Intervention","description":"Description of the intervention","name":"John Doe","speaker":"Speaker Name","location":"Event Location","date_of_intervention":"2023-01-01 12:00:00"}' http://localhost:8000/api/v1/interventions
+```
+
+### Update an Intervention
+
+To update an existing intervention, replace <intervention_id> with the actual ID and make a PUT request with the
+updated data:
+
+```bash
+curl -X PUT -H "Content-Type: application/json" -d '{"description":"Updated description"}' http://localhost:8000/api/v1/interventions/<intervention_id>
+```
+
+### Delete an Intervention
+
+To delete an intervention, replace <intervention_id> with the actual ID and make a DELETE request:
+
+```bash
+curl -X DELETE http://localhost:8000/api/v1/interventions/<intervention_id>
+```
+
 ## Flask-Restless
 
-This project uses [Flask-Restless](https://flask-restless.readthedocs.io/) for creating a RESTful API with ease. Flask-Restless simplifies the process of building RESTful APIs on top of Flask applications.
+This project uses [Flask-Restless](https://flask-restless.readthedocs.io/) for creating a RESTful API with ease.
+Flask-Restless simplifies the process of building RESTful APIs on top of Flask applications.
 
-For more information about Flask-Restless, you can refer to the [official documentation](https://flask-restless.readthedocs.io/).
+For more information about Flask-Restless, you can refer to
+the [official documentation](https://flask-restless.readthedocs.io/).
 
 ### Quick Links
-- [Flask-Restless Documentation](https://flask-restless.readthedocs.io/)
 
+- [Flask-Restless Documentation](https://flask-restless.readthedocs.io/)
 
 ## Running the Application
 
